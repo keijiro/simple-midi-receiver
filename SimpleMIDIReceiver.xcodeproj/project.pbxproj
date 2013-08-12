@@ -18,6 +18,8 @@
 		0F42D94B17B8EEFD00629F69 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F42D92A17B8EEFD00629F69 /* Cocoa.framework */; };
 		0F42D95317B8EEFD00629F69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F42D95117B8EEFD00629F69 /* InfoPlist.strings */; };
 		0F42D95517B8EEFD00629F69 /* SimpleMIDIReceiverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F42D95417B8EEFD00629F69 /* SimpleMIDIReceiverTests.m */; };
+		0FBD1E7E17B90C4A0091AD9F /* MIDIMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBD1E7D17B90C490091AD9F /* MIDIMessage.m */; };
+		0FBD1E7F17B90C4A0091AD9F /* MIDIMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBD1E7D17B90C490091AD9F /* MIDIMessage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		0F42D95017B8EEFD00629F69 /* SimpleMIDIReceiverTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleMIDIReceiverTests-Info.plist"; sourceTree = "<group>"; };
 		0F42D95217B8EEFD00629F69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0F42D95417B8EEFD00629F69 /* SimpleMIDIReceiverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleMIDIReceiverTests.m; sourceTree = "<group>"; };
+		0FBD1E7C17B90C490091AD9F /* MIDIMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDIMessage.h; sourceTree = "<group>"; };
+		0FBD1E7D17B90C490091AD9F /* MIDIMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDIMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 				0F42D93F17B8EEFD00629F69 /* MainMenu.xib */,
 				0F42D94217B8EEFD00629F69 /* Images.xcassets */,
 				0F42D93117B8EEFD00629F69 /* Supporting Files */,
+				0FBD1E7C17B90C490091AD9F /* MIDIMessage.h */,
+				0FBD1E7D17B90C490091AD9F /* MIDIMessage.m */,
 			);
 			path = SimpleMIDIReceiver;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBD1E7E17B90C4A0091AD9F /* MIDIMessage.m in Sources */,
 				0F42D93E17B8EEFD00629F69 /* SimpleMIDIReceiverAppDelegate.m in Sources */,
 				0F42D93717B8EEFD00629F69 /* main.m in Sources */,
 			);
@@ -262,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBD1E7F17B90C4A0091AD9F /* MIDIMessage.m in Sources */,
 				0F42D95517B8EEFD00629F69 /* SimpleMIDIReceiverTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +475,7 @@
 				0F42D95A17B8EEFD00629F69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F42D95B17B8EEFD00629F69 /* Build configuration list for PBXNativeTarget "SimpleMIDIReceiverTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +484,7 @@
 				0F42D95D17B8EEFD00629F69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
