@@ -4,7 +4,8 @@
 // MIDI message class used for storing message data and source ID.
 @interface MIDIMessage : NSObject
 
-- (id)initWithPacket:(const MIDIPacket *)packet sourceID:(MIDIUniqueID)sourceID;
+- (id)initWithSource:(MIDIUniqueID)sourceID;
+- (int)readPacket:(const MIDIPacket *)packet dataOffset:(int)offset;
 
 @property (assign) MIDIUniqueID sourceID;
 @property (assign) Byte status;

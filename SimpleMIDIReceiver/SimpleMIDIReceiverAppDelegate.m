@@ -18,16 +18,21 @@ static void MyMIDIStateChangedHander(const MIDINotification *message, void *refC
     [delegate performSelectorOnMainThread:@selector(reconnectAllSources:) withObject:nil waitUntilDone:NO];
 }
 
-static void MyMIDIReadProc(const MIDIPacketList *pktlist, void *readProcRefCon, void *srcConnRefCon)
+static void MyMIDIReadProc(const MIDIPacketList *packetList, void *readProcRefCon, void *srcConnRefCon)
 {
     SimpleMIDIReceiverAppDelegate *delegate = (__bridge SimpleMIDIReceiverAppDelegate *)(readProcRefCon);
     MIDIUniqueID sourceID = *(MIDIUniqueID *)srcConnRefCon;
     
     // Process the all incoming packets.
-    for (int i = 0; i < pktlist->numPackets; i++) {
+    const MIDIPacket *packet = &packetList->packet[0];
+    for (int i = 0; i < packetList->numPackets; i++) {
         // Push this packet onto the main thread.
-        MIDIMessage *message = [[MIDIMessage alloc] initWithPacket:&pktlist->packet[i] sourceID:sourceID];
-        [delegate performSelectorOnMainThread:@selector(receiveMessage:) withObject:message waitUntilDone:NO];
+        for (int offset = 0; offset < packet->length;) {
+            MIDIMessage *message = [[MIDIMessage alloc] initWithSource:sourceID];
+            offset = [message readPacket:packet dataOffset:offset];
+            [delegate performSelectorOnMainThread:@selector(receiveMessage:) withObject:message waitUntilDone:NO];
+        }
+        packet = MIDIPacketNext(packet);
     }
 }
 
